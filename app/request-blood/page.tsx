@@ -192,7 +192,7 @@ export default function RequestBloodPage() {
             <TabsContent value="process">
               <div className="max-w-3xl mx-auto">
                 <h2 className="text-3xl font-bold text-center mb-10">How Blood Request Process Works</h2>
-                
+
                 <ol className="relative border-l border-gray-200">
                   <li className="mb-10 ml-6">
                     <span className="absolute flex items-center justify-center w-8 h-8 bg-red-100 rounded-full -left-4 ring-4 ring-white">
@@ -205,7 +205,7 @@ export default function RequestBloodPage() {
                       Fill out the blood request form with all required information, including patient details, blood group needed, and contact information.
                     </p>
                   </li>
-                  
+
                   <li className="mb-10 ml-6">
                     <span className="absolute flex items-center justify-center w-8 h-8 bg-red-100 rounded-full -left-4 ring-4 ring-white">
                       <div className="flex items-center justify-center w-6 h-6 bg-red-600 rounded-full">
@@ -217,5 +217,12 @@ export default function RequestBloodPage() {
                       Our team verifies the request details and may contact you for additional information if needed.
                     </p>
                   </li>
-
-                  <li className="mb-\
+                </ol>
+              </div>
+            </TabsContent>
+          </Tabs>
+        </div>
+      </section>
+    </MainLayout>
+  )
+}
