@@ -11,6 +11,7 @@ const navItems = [
   { name: "Search Donor", href: "/search" },
   { name: "Health Tips", href: "/health-tips" },
   { name: "Emergency Services", href: "/emergency" },
+  { name: "Privacy Policy", href: "/privacy-policy" },
   { name: "Contact", href: "/contact" },
 ]
 

@@ -1,5 +1,36 @@
-import type React from "react"
-import Navbar from "@/components/navbar"
+import React from "react"; // Changed from type-only import
+import Navbar from "@/components/navbar";
+
+interface FooterLink {
+  href: string;
+  text: string;
+}
+
+interface ContactInfo {
+  addressLines: string[];
+  email: string;
+}
+
+const quickLinksData: FooterLink[] = [
+  { href: "/", text: "Home" },
+  { href: "/search", text: "Search Donor" },
+  { href: "/health-tips", text: "Health Tips" },
+  { href: "/emergency", text: "Emergency Services" },
+];
+
+const legalLinksData: FooterLink[] = [
+  { href: "/privacy", text: "Privacy Policy" },
+  { href: "/terms", text: "Terms of Service" },
+  { href: "/cookies", text: "Cookie Policy" },
+];
+
+const contactInfoData: ContactInfo = {
+  addressLines: [
+    "Khilkhet, Dhaka-1229",
+    "Bangladesh",
+  ],
+  email: "boloddonorbd.island@gmail.com",
+};
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,59 +47,38 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             <div>
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2">
-                <li>
-                  <a href="/" className="text-gray-400 hover:text-white">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="/search" className="text-gray-400 hover:text-white">
-                    Search Donor
-                  </a>
-                </li>
-                <li>
-                  <a href="/health-tips" className="text-gray-400 hover:text-white">
-                    Health Tips
-                  </a>
-                </li>
-                <li>
-                  <a href="/emergency" className="text-gray-400 hover:text-white">
-                    Emergency Services
-                  </a>
-                </li>
+                {quickLinksData.map((link) => (
+                  <li key={link.href}>
+                    <a href={link.href} className="text-gray-400 hover:text-white">
+                      {link.text}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Legal</h4>
               <ul className="space-y-2">
-                <li>
-                  <a href="/privacy" className="text-gray-400 hover:text-white">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="/terms" className="text-gray-400 hover:text-white">
-                    Terms of Service
-                  </a>
-                </li>
-                <li>
-                  <a href="/cookies" className="text-gray-400 hover:text-white">
-                    Cookie Policy
-                  </a>
-                </li>
+                {legalLinksData.map((link) => (
+                  <li key={link.href}>
+                    <a href={link.href} className="text-gray-400 hover:text-white">
+                      {link.text}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <address className="not-italic text-gray-400">
-                123 Blood Donor Street
-                <br />
-                Mirpur-10, Dhaka-1216
-                <br />
-                Bangladesh
-                <br />
-                <a href="mailto:info@rokthersondhane.org" className="hover:text-white">
-                  info@rokthersondhane.org
+                {contactInfoData.addressLines.map((line, index) => (
+                  <React.Fragment key={index}>
+                    {line}
+                    <br />
+                  </React.Fragment>
+                ))}
+                <a href={`mailto:${contactInfoData.email}`} className="hover:text-white">
+                  {contactInfoData.email}
                 </a>
               </address>
             </div>
