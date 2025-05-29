@@ -9,13 +9,13 @@ export default function AccountDeletePage() {
             <h1 className="text-3xl font-bold text-red-600 mb-8 text-center">Delete Account Request</h1>
             
             <p className="mb-6 text-gray-700 leading-relaxed">
-              If you wish to delete your account and associated data from the Blood App, please follow the steps below:
+              If you wish to delete your account and associated data from the Rokther Sondhane App, please follow the steps below:
             </p>
 
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Steps to Delete Your Account:</h2>
               <ol className="list-decimal list-inside space-y-2 text-gray-700 pl-4">
-                <li>Log in to the Blood App with your registered account.</li>
+                <li>Log in to the Rokther Sondhane App with your registered account.</li>
                 <li>Navigate to the Settings section.</li>
                 <li>Select Support & contact with us and confirm your request.</li>
               </ol>
